@@ -25,3 +25,7 @@ func (app *Config) readJson(w http.ResponseWriter, r *http.Request, data any) er
 
 	return nil
 }
+
+func (app *Config) writeJson(w http.ResponseWriter, r *http.Request, data any) error {
+	return nil
+}
