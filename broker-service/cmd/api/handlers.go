@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"net/http"
 )
 
@@ -11,12 +10,9 @@ func (app *Config) Broker(writer http.ResponseWriter, req *http.Request) {
 		Message: "HEY",
 	}
 
-	out, err := json.MarshalIndent(payload, "", "\t")
+	err := app.writeJson(writer, http.StatusOK, payload)
+
 	if err != nil {
 		panic(err.Error())
 	}
-
-	writer.Header().Set("Content-Type", "application/json")
-	writer.WriteHeader(http.StatusAccepted)
-	writer.Write(out)
 }
