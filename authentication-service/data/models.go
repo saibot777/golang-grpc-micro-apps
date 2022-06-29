@@ -7,7 +7,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/crypto/bcrypt"
+	"golang.org/x/crypto/bcrypt"
 )
 
 const dbTimeout = time.Second * 3
